@@ -2,7 +2,6 @@ import React from 'react'
 import {useDispatch, useSelector} from 'react-redux'
 import {add_point, get_wind,show_picture,show_dist, hide_clouds, show_clouds} from './actions'
 import store from './store'
-import {Link} from 'react-router-dom'
 import $ from 'jquery'
 
 let x;
@@ -146,7 +145,6 @@ for (let i=2;i<arrayArc.length; i+=2) {
         let response = await fetch(`https://www.mapquestapi.com/staticmap/v5/map?key=dDGK8sCXjbWcbowd7oVsGzyptmQpGLi4&shape=${res1[0]}&size=950,450@2x`)
         let blob = await response.blob()
         let img = document.createElement('img')
-        //document.body.append(img)
         img.src = URL.createObjectURL(blob)
         img.id='imgLine'
         $(".ramka1").append(img)
@@ -171,8 +169,6 @@ async function line2(a,b) {
         let response = await fetch(`https://www.mapquestapi.com/staticmap/v5/map?locations=${a},${b}&zoom=4&size=@2x&defaultMarker=marker-md-3B5998-22407F&key=dDGK8sCXjbWcbowd7oVsGzyptmQpGLi4`)
         let blob = await response.blob()
         let img = document.createElement('img')
-      //=document.getElementById("ramka2")
-        //document.body.appendChild(img)
         img.src = URL.createObjectURL(blob)
         img.id='imgLine2'
         $(".ramka1").append(img)
@@ -190,7 +186,6 @@ async function line2(a,b) {
         document.getElementById('ramka2').style.opacity='1'
         let img = document.createElement('img')
         img.id = 'imgLine3'
-        //document.body.append(img)
         img.src = URL.createObjectURL(blob);
         $(".ramka2").append(img)
         } catch (err){
@@ -205,7 +200,6 @@ async function line2(a,b) {
         let response = await fetch(`https://www.mapquestapi.com/staticmap/v5/map?locations=${lat},${lon}&zoom=${z}&size=@2x&defaultMarker=marker-md-3B5998-22407F&key=dDGK8sCXjbWcbowd7oVsGzyptmQpGLi4`)
         let blob =await response.blob()
         let img = document.createElement('img')
-        //document.body.append(img)
         img.src = URL.createObjectURL(blob)
         img.id = 'imgLine4'
         $(".ramka3").append(img)
@@ -220,7 +214,6 @@ async function line2(a,b) {
         let response = await fetch(`https://www.mapquestapi.com/staticmap/v5/map?key=dDGK8sCXjbWcbowd7oVsGzyptmQpGLi4&center=${place}&size=@2x&zoom=${z}`)
         let blob = await response.blob()
         let img = document.createElement('img')
-        //document.body.append(img)
         img.src = URL.createObjectURL(blob)
         img.id='imgLine5'
         $(".ramka4").append(img)
@@ -232,10 +225,9 @@ async function line2(a,b) {
   
   async function line7(gt) {
         try {
-        let response = await fetch(`https://www.mapquestapi.com/staticmap/v5/map?locations=${arrayArc[0]},${arrayArc[1]}||${arrayArc[gt*2]},${arrayArc[gt*2+1]}&size=550,550@2x&"marker-7B0099"&marker-end&key=dDGK8sCXjbWcbowd7oVsGzyptmQpGLi4`)
+        let response = await fetch(`https://www.mapquestapi.com/staticmap/v5/map?locations=${arrayArc[0]},${arrayArc[1]}|marker-start||${arrayArc[gt*2]},${arrayArc[gt*2+1]}|marker-end&size=550,550@2x&"marker-7B0099"&marker-end&key=dDGK8sCXjbWcbowd7oVsGzyptmQpGLi4`)
         let blob = await response.blob()
         let img = document.createElement('img')
-        //document.body.append(img)
         img.src = URL.createObjectURL(blob)
         img.id='imgLine7'
         $(".ramka5").append(img)
@@ -318,8 +310,8 @@ const Place = ({onNewPlace})=> {
    const submit = e => {
    e.preventDefault()
    onNewPlace(_place.value, _z.value, _lo)
-   return _place, _z, _lo
- }
+   }
+   
  return (
    <form onSubmit = {submit}>
     <input ref = {input =>_place=input}
