@@ -1,7 +1,8 @@
 body {
   width:100vw;
-  overflow-x: hidden;
-  margin:0;
+  /*max-width:1800px;*/
+ /* overflow-x: hidden;*/
+  margin:0 auto;
   padding:0;
  }
 
@@ -30,12 +31,12 @@ input ::placeholder {
     top:-300px;
     padding-left:10px;
     }
-#basket {
+/*#basket {
   position:relative;
   top:-340px;
   width:100%;
   height:30px;
- }
+ }*/
 
 div {
   font-size: 18px;
@@ -70,14 +71,16 @@ text-align: center;
 font-family: cursive;
 font-size: 18px;
 }
+
 #direct {
-  position:relative;
-  top:-20px;
+  position:absolute;
+  top:0px;
   left:335px;
   font-family: cursive;
   font-size: 20px;
   color: rgb(107, 19, 3);
 }
+
 .weak {
   color:lightskyblue
 }
@@ -571,6 +574,11 @@ z-index: 5;
     background-image: url(./images/map.png);
     background-size: cover;
    }
+.ramka1 {
+  position:absolute;
+  top:0px;
+  left:0px;
+}
 
 #ramka2 {
     position:absolute;
@@ -583,9 +591,15 @@ z-index: 5;
     opacity:0;
    }
 
+   .ramka2 {
+    position:absolute;
+    top:0px;
+    left:0px;
+  }
+
    #ramka3 {
     position:absolute;
-    top:582px;
+    top:0px;
     left:309px;
     height:25px;
     width:384px;
@@ -596,6 +610,12 @@ z-index: 5;
     color:rgb(107, 19, 3);
     padding-bottom: 6px;
    }
+   
+   .ramka3 {
+    position:absolute;
+    top:582px;
+    left:0px;
+  }
 
    #ramka4 {
     position: absolute;
@@ -610,10 +630,17 @@ z-index: 5;
     color:rgb(107, 19, 3);
     padding-bottom: 6px;
     }
+
+    .ramka4 {
+      position:absolute;
+      top:0px;
+      left:0px;
+    }
+
     #ramka5 {
       position: absolute;
-      top:1231px;
-      left:700px;
+      top:0px/*1231px*/;
+      left:0px;
       height:25px;
       width:620px;
       background-image: url(./images/map.png);
@@ -624,7 +651,13 @@ z-index: 5;
       padding-bottom: 6px;
       z-index:4
       }
-  
+
+      .ramka5 {
+        position:absolute;
+        top:1231px;
+        left:700px;
+      }
+
 .datum {
 background-color: white;
 position:absolute;
@@ -645,7 +678,7 @@ top:105px
 }
 #average {
   position:absolute;
-  top:940px;
+  top:948px;
   margin-left:5px;
   font-family: cursive;
   font-size: 28px;
@@ -658,9 +691,9 @@ top:105px
 }
 
 .jour {
-  position: absolute;
-  top:1267px;
-  left:710px ;
+  position:absolute;
+  top:1235px;
+  left:710px;
   z-index:65
  }
 
@@ -679,16 +712,18 @@ to {background-color:black;}
 
 #imgLine2 {
 position:absolute;
-top:248px;
-left: 390px;
+top:195px;
+left: 389px;
 height:384px;
 width:384px;
 box-shadow:2px 2px 8px;
 }
+#imgLine2::before {content: "Общий план"
+}
 
 #imgLine {
 position:absolute;
-top:248px;
+top:196px/*2282px*/;
 left:309px;
 height:384px;
 width:620px;
@@ -699,7 +734,7 @@ margin:0 auto
 
 #imgLine3 {
 position:absolute;
-top:248px;
+top:196px;
 left:936px;
 box-shadow:0px 2px 2px;
 height:384px;
@@ -709,17 +744,18 @@ margin:0 auto
 
 #imgLine4 {
 position:absolute;
-top:645px;
+top:30px;
 left:309px;
 height:384px;
 width:384px;
 margin:0 auto;
 box-shadow:2px 2px 2px;
+z-index:2
 }
 
 #imgLine5 {
 position:absolute;
-top:645px;
+top:614px;
 left:700px;
 height:620px;
 width:620px;
@@ -738,8 +774,8 @@ margin:0 auto
 
 #imgLine7 {
 position:absolute;
-top:1290px;
-left:700px;
+top:27px;
+left:0px;
 box-shadow:0 2px 2px;
 height:620px;
 width:620px;
@@ -760,8 +796,8 @@ background-color:white;
 border-collapse: collapse;
 border-radius: 15%;
 background-size: cover;
-height:36.4px;
-width:36.4px;
+height:36.6px;
+width:36.6px;
 opacity:0;
 }
 
@@ -792,7 +828,7 @@ color:white
 .diary {
 width:780px;
 position:absolute;
-top:1035px
+top:1045px
 }
 .places:nth-child(odd) {
  background-color: coral; 
@@ -818,7 +854,7 @@ width: 400px;
 }
 
 .distance,.distance1 {
-width: 218px;
+width: 201px;
 }
 
 .day, .place, .distance, .day1, .point, .distance1{
@@ -967,21 +1003,19 @@ transform-origin: 50% 100%;
 
 @keyframes black_move {
 from {
-transform:rotate(0deg);
-transform-origin: 50% 100%;
+transform:rotate(0deg) translateY(0px) ;
+transform-origin: 50% 100%
 }
-to {transform:rotate(-25deg);
+to {transform:rotate(-10deg) translateY(-5px);
 transform-origin: 50% 100%;
 }
 }
 
 @keyframes blue_move {
 from {
-transform:rotate(0deg);
-transform-origin: 50% 100%;
+transform:rotate(0deg) translateY(0px);
 }
-to {transform:rotate(20deg);
-transform-origin: 50% 100%;
+to {transform:rotate(10deg) translateY(-5px);
 }
 }
 
