@@ -787,17 +787,19 @@ Z-index:10
 position: absolute;
 top:196px;
 left:936px;
+width:384px;
+height:384px;
 z-index:8;
 border-collapse: collapse;
 opacity:1
 }
-td {
+/*#table1*/ td {
 background-color:white;
 border-collapse: collapse;
 border-radius: 15%;
 background-size: cover;
-height:36.6px;
-width:36.6px;
+height:9.53%;
+width:9.53%;
 opacity:0;
 }
 
